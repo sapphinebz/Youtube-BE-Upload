@@ -24,6 +24,10 @@
 
 ## Description
 
+ตัวอย่างโค้ดเขียน Upload Files
+[Frontend Repo](https://github.com/sapphinebz/Youtube-FE-Upload)
+[Backend Repo](https://github.com/sapphinebz/Youtube-BE-Upload)
+
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Installation
