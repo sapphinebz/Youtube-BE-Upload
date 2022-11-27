@@ -5,6 +5,8 @@ import { UploadService } from './upload.service';
 import * as path from 'path';
 import * as multer from 'multer';
 
+// for detail
+// https://github.com/expressjs/multer
 const storage = multer.diskStorage({
   destination: (req, file, callback) => {
     callback(null, path.join(process.cwd(), 'files'));
