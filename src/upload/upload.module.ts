@@ -4,11 +4,17 @@ import { UploadController } from './upload.controller';
 import * as path from 'path';
 import * as multer from 'multer';
 
+import * as fs from 'fs';
 // for detail
 // https://github.com/expressjs/multer
 const storage = multer.diskStorage({
   destination: (req, file, callback) => {
-    callback(null, path.join(process.cwd(), 'files'));
+    const directoryPath = path.join(process.cwd(), 'files');
+    if (!fs.existsSync(directoryPath)) {
+      fs.mkdirSync(directoryPath);
+    }
+
+    callback(null, directoryPath);
   },
   filename(req, file, callback) {
     callback(null, `${Date.now()}-${file.originalname}`);
