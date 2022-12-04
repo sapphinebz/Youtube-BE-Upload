@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MulterModule } from '@nestjs/platform-express';
 import { UploadController } from './upload.controller';
-import { UploadService } from './upload.service';
 import * as path from 'path';
 import * as multer from 'multer';
 
@@ -19,6 +18,6 @@ const storage = multer.diskStorage({
 @Module({
   imports: [MulterModule.register({ storage: storage })],
   controllers: [UploadController],
-  providers: [UploadService],
+  providers: [],
 })
 export class UploadModule {}

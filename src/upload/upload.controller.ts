@@ -1,20 +1,15 @@
-import {
-  Controller,
-  Inject,
-  Post,
-  UploadedFile,
-  UseInterceptors,
-} from '@nestjs/common';
-import { FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
+import { Controller, Post, UseInterceptors } from '@nestjs/common';
+import { FilesInterceptor } from '@nestjs/platform-express';
 
 @Controller('upload')
 export class UploadController {
   constructor() {}
-  @Post('/single')
-  @UseInterceptors(FileInterceptor('file'))
-  uploadSingleFile() {}
 
   @Post('/multiples')
   @UseInterceptors(FilesInterceptor('files'))
-  uploadMultipleFiles() {}
+  uploadMultipleFiles() {
+    return {
+      result: true,
+    };
+  }
 }
